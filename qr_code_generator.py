@@ -20,6 +20,7 @@ def generate_qr(data, output="qrcode.png", size=300):
     qr.make(fit=True)
 
     img = qr.make_image(fill_color="black", back_color="white")
+    img = img.resize((size, size))
     img.save(output)
     print(f"QR-код сохранён в {output}")
 
